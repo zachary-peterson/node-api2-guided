@@ -129,3 +129,5 @@ router.post('/api/hubs/:id/messages', (req, res) => {
       })
     })
 })
+
+module.exports = router
