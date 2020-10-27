@@ -139,3 +139,6 @@ server.post('/api/hubs/:id/messages', (req, res) => {
       })
     })
 })
+
+// common.js equiv of export default
+module.exports = server
