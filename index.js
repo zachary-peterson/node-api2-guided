@@ -105,7 +105,11 @@ server.get('/api/hubs/:id/messages', (req, res) => {
 
     })
     .catch(error => {
-      console.log(err)
+      console.log(error.message, console.stack)
+      res.status(500).json({
+        message: error.message,
+        stack: error.stack,
+      })
     })
 })
 // add an endpoint for adding new message to a hub
