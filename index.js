@@ -103,7 +103,9 @@ server.get('/api/hubs/:id/messages', (req, res) => {
   Hubs.findHubMessages(req.params.id)
     .then(data => {
       console.log(data)
-      res.end()
+      if (!data.length) {
+        res.status(404)
+      } 
     })
     .catch(error => {
       console.log(error.message, error.stack)
