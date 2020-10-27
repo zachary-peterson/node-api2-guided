@@ -106,7 +106,7 @@ server.get('/api/hubs/:id/messages', (req, res) => {
       console.log(data)
       if (!data.length) {
         res.status(404).json({
-          message: 'No hub with id ' + req.params.id
+          message: 'No messages, OR No hub with id ' + req.params.id
         })
       } else {
         res.status(200).json(data)
@@ -122,6 +122,7 @@ server.get('/api/hubs/:id/messages', (req, res) => {
     })
 })
 // add an endpoint for adding new message to a hub [POST] { sender, text, hub_id }
+server.post('/api/hubs')
 
 
 server.listen(4000, () => {
