@@ -102,7 +102,8 @@ server.get('/api/hubs/:id/messages', (req, res) => {
   // we need to find a good function inside the model
   Hubs.findHubMessages(req.params.id)
     .then(data => {
-
+      console.log(data)
+      res.end()
     })
     .catch(error => {
       console.log(error.message, console.stack)
