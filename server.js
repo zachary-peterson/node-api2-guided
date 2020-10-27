@@ -6,6 +6,10 @@ const server = express();
 // are where we configure the app/server
 server.use(express.json()); // gives Express the ability to parse the req.body
 server.use(hubsRouter)
+server.use(dogsRouter)
+server.use(hubsRouter)
+server.use(hubsRouter)
+server.use(hubsRouter)
 
 server.get('/', (req, res) => {
   res.send(`
