@@ -110,7 +110,6 @@ server.get('/api/hubs/:id/messages', (req, res) => {
       } else {
         res.status(200).json(data)
       }
-      
     })
     .catch(error => {
       console.log(error.message, error.stack)
