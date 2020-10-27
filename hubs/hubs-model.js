@@ -15,6 +15,8 @@ module.exports = {
 
 function find(query) { // it's an empty object in our test
   const { page = 1, limit = 2, sortby = 'id', sortdir = 'asc' } = query;
+  console.log(query, page, limit, sortby, sortdir)
+
   const offset = limit * (page - 1);
 
   let rows = db('hubs')
