@@ -14,7 +14,7 @@ server.get('/', (req, res) => {
 });
 
 server.get('/api/hubs', (req, res) => {
-  console.log(req.query) // http://localhost:4000/api/hubs?foo=bar&baz=fizz // { foo: 'bar', baz: 'fizz' }
+  console.log(req.query) // http://localhost:4000/api/hubs?limit=20 // { foo: 'bar', baz: 'fizz' }
   Hubs.find(req.query)
   .then(hubs => {
     res.status(200).json(hubs);
