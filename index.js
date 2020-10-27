@@ -102,6 +102,7 @@ server.get('/api/hubs/:id/messages', (req, res) => {
   // we need to find a good function inside the model
   Hubs.findHubMessages(req.params.id)
     .then(data => {
+      throw new Error('that was arghhhhh!!!!!!')
       console.log(data)
       if (!data.length) {
         res.status(404).json({
