@@ -99,7 +99,7 @@ server.put('/api/hubs/:id', (req, res) => {
 
 // add an endpoint that returns all the messages for a hub
 server.get('/api/hubs/:id/messages', (req, res) => {
-  
+  // we need to find a good function inside the model
 })
 // add an endpoint for adding new message to a hub
 
