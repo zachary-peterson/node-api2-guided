@@ -1,4 +1,8 @@
-server.get('/api/hubs', (req, res) => {
+const express = require('express')
+
+
+
+router.get('/api/hubs', (req, res) => {
   console.log(req.query) // http://localhost:4000/api/hubs?limit=20 // { foo: 'bar', baz: 'fizz' }
   Hubs.find(req.query)
   .then(hubs => {
@@ -13,7 +17,7 @@ server.get('/api/hubs', (req, res) => {
   });
 });
 
-server.get('/api/hubs/:id', (req, res) => {
+router.get('/api/hubs/:id', (req, res) => {
   Hubs.findById(req.params.id)
   .then(hub => {
     if (hub) {
@@ -31,7 +35,7 @@ server.get('/api/hubs/:id', (req, res) => {
   });
 });
 
-server.post('/api/hubs', (req, res) => {
+router.post('/api/hubs', (req, res) => {
   Hubs.add(req.body)
   .then(hub => {
     res.status(201).json(hub);
@@ -45,7 +49,7 @@ server.post('/api/hubs', (req, res) => {
   });
 });
 
-server.delete('/api/hubs/:id', (req, res) => {
+router.delete('/api/hubs/:id', (req, res) => {
   Hubs.remove(req.params.id)
   .then(count => {
     if (count > 0) {
@@ -63,7 +67,7 @@ server.delete('/api/hubs/:id', (req, res) => {
   });
 });
 
-server.put('/api/hubs/:id', (req, res) => {
+router.put('/api/hubs/:id', (req, res) => {
   const changes = req.body;
   Hubs.update(req.params.id, changes)
   .then(hub => {
@@ -83,7 +87,7 @@ server.put('/api/hubs/:id', (req, res) => {
 });
 
 // add an endpoint that returns all the messages for a hub
-server.get('/api/hubs/:id/messages', (req, res) => {
+router.get('/api/hubs/:id/messages', (req, res) => {
   // we need to find a good function inside the model
   Hubs.findHubMessages(req.params.id)
     .then(data => {
@@ -107,7 +111,7 @@ server.get('/api/hubs/:id/messages', (req, res) => {
     })
 })
 // add an endpoint for adding new message to a hub [POST] { sender, text } :id
-server.post('/api/hubs/:id/messages', (req, res) => {
+router.post('/api/hubs/:id/messages', (req, res) => {
   const newMessage = { hub_id: req.params.id, ...req.body }
   Hubs.addMessage(newMessage)
     .then(data => {
