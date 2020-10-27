@@ -104,8 +104,11 @@ server.get('/api/hubs/:id/messages', (req, res) => {
     .then(data => {
       console.log(data)
       if (!data.length) {
-        res.status(404)
-      } 
+        res.status(404).json({
+          message: 'No hub with id ' + req.params.id
+        })
+      }
+      res.status(200).json(data)
     })
     .catch(error => {
       console.log(error.message, error.stack)
