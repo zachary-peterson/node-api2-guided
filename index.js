@@ -122,7 +122,9 @@ server.get('/api/hubs/:id/messages', (req, res) => {
     })
 })
 // add an endpoint for adding new message to a hub [POST] { sender, text, hub_id }
-server.post('/api/hubs')
+server.post('/api/hubs/:id/messages', (req, res) => {
+  // ?
+})
 
 
 server.listen(4000, () => {
