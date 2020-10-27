@@ -115,8 +115,9 @@ server.get('/api/hubs/:id/messages', (req, res) => {
     .catch(error => {
       console.log(error.message, error.stack)
       res.status(500).json({
-        message: error.message,
-        stack: error.stack,
+        message: 'that was an error'
+        // message: error.message,
+        // stack: error.stack,
       })
     })
 })
