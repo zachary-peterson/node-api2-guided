@@ -4,7 +4,7 @@ const Hubs = require('./hubs/hubs-model.js');
 
 const server = express();
 
-server.use(express.json());
+server.use(express.json()); // gives Express the ability to parse the req.body
 
 server.get('/', (req, res) => {
   res.send(`
