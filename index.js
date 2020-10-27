@@ -98,6 +98,7 @@ server.put('/api/hubs/:id', (req, res) => {
 });
 
 // add an endpoint that returns all the messages for a hub
+server.get('/api/hubs/:id')
 // add an endpoint for adding new message to a hub
 
 server.listen(4000, () => {
