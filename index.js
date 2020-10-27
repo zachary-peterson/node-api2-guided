@@ -121,7 +121,7 @@ server.get('/api/hubs/:id/messages', (req, res) => {
       })
     })
 })
-// add an endpoint for adding new message to a hub
+// add an endpoint for adding new message to a hub [POST] 
 
 server.listen(4000, () => {
   console.log('\n*** Server Running on http://localhost:4000 ***\n');
