@@ -126,7 +126,16 @@ server.post('/api/messages', (req, res) => {
   Hubs.addMessage(req.body)
     .then(data => {
       console.log(data)
-      res.status
+      res.status(201).json(data)
+    })
+    .catch(error => {
+      console.log(error) // this is not gonna go well
+      console.log(error.message, error.stack)
+      res.status(500).json({
+        // message: 'that was an error of some sort'
+        message: error.message,
+        stack: error.stack,
+      })
     })
 })
 
