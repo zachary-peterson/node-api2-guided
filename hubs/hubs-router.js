@@ -1,6 +1,6 @@
 const express = require('express')
 
-
+const router = express.Router()
 
 router.get('/api/hubs', (req, res) => {
   console.log(req.query) // http://localhost:4000/api/hubs?limit=20 // { foo: 'bar', baz: 'fizz' }
