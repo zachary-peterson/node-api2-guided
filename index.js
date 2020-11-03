@@ -1,8 +1,10 @@
 const express = require('express');
+const morgan = require('morgan');
 
 const hubsRouter = require('./hubs/hubs-router.js');
 
 const server = express();
+server.use(morgan('tiny'));
 
 server.use(express.json());
 
