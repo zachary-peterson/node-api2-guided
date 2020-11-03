@@ -15,3 +15,8 @@ In this project we will learn how to create a very simple Web API using `Node.js
 - [ ] type `npm i` to download dependencies.
 
 Please follow along as the instructor builds the API step by step.
+
+Action | Non REST way | REST Desgin
+:--|:--|:--
+Add a client|/addclient|/clients
+List all clients|/listclients|/clients
